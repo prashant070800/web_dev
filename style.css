@@ -1,8 +1,10 @@
+
+
 header{
     border: 3px solid rgb(233, 18, 18);
     background-color: rgb(54, 28, 150);
     padding: 0px;
-    width: 90%;
+    float: sticky;
     display: flex;
     flex-wrap: wrap;
 }
@@ -15,7 +17,7 @@ li{
 }
 
 a{
-    text-decoration: none;
+    
     font-size: large;
     color: white;
     
@@ -45,16 +47,6 @@ img{
     height: 200px;
     background-color: blueviolet;
     border: 2px dotted green;
-}
-#fixed-top{
-    position: fixed;
-    top : 0px;
-    z-index: 1030;
-    display: block;
-    justify-content: space-around;
-    /* color: rgb(255,255,255); */
-
-    
 }
 .project{
     display: flex;
