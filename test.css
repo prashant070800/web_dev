@@ -1,0 +1,16 @@
+.hello{
+    display: flex;
+    flex-wrap: wrap;
+    
+    background-color: blueviolet;
+    border: 8px solid blue;
+   flex-direction: row;
+    
+}
+
+
+
+/* div:nth-of-type(1){
+    align-self: center;
+    width : 100vw
+} */

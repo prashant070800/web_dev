@@ -27,6 +27,12 @@ img{
     display: inline-block;
     border: 2px solid black;
 }
+#about-me{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
 #projects{
     background-color: chartreuse;
