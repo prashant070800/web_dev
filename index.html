@@ -2,155 +2,134 @@
 <html lang="en">
 
 <head>
-    <title>Prashant Singh| Portfolio </title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashant Singh | Portfolio</title>
+    <!-- Preload fonts or other critical assets here if needed -->
     <link rel="stylesheet" href="utility.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-color: aquamarine;">
+<body>
 
-    <header id="header">
-        <nav>
-            <ul style="">
-                <!-- <li>
-                        <a href="">Home</a>
-                    </li> -->
-                <li>
-                    <a href="">About</a>
+    <header id="main-header">
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#about-me" class="nav-link">About</a>
                 </li>
-                <li>
-                    <a href="#projects">Project</a>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
                 </li>
-                <li>
-                    <a href="#certificates">Certificates</a>
+                <li class="nav-item">
+                    <a href="#certificates" class="nav-link">Certificates</a>
                 </li>
-                <li>
-                    <a href="#contact">Contact</a>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <div></div>
-        <div>
-            <h1 style="text-align: center;">About me</h1>
-        </div>
-
-        <div id="about-me">
-            <div style="flex-basis: 700px; flex-grow: 1;">
-                <p>I am Prashant Singh.</p>
-                <p>I am currently a Final year Undergraduate (2018-22) at Institute of Engineering and
-                    Tchnology, Lucknow pursuing B. Tech. in Electronics and Communication engineering. I enjoy
-                    designing
-                    responsive websites and building Robots.
-                    <br> <br> My goal is to build pixel-perfect components and practical projects which provide a
-                    rich user
-                    experience with real world application.
-
-                </p>
+        <section id="about-me" class="section hero-section">
+            <h1 class="section-title">About Me</h1>
+            <div class="container hero-container">
+                <div class="bio">
+                    <p>I am Prashant Singh.</p>
+                    <p>I am currently a Final year Undergraduate (2018-22) at Institute of Engineering and
+                        Technology, Lucknow pursuing B. Tech. in Electronics and Communication engineering. I enjoy
+                        designing responsive websites and building Robots.</p>
+                    <p>My goal is to build pixel-perfect components and practical projects which provide a
+                        rich user experience with real world application.</p>
+                </div>
+                <div class="profile-image-container">
+                    <img src="images/prashnat.jpg" alt="Prashant Singh" class="profile-image">
+                </div>
             </div>
-            <div style="flex-basis: 300px;">
-                <img src="images/prashnat.jpg" alt="image" width="200px">
-            </div>
-        </div>
-
-
-
-
-        <div id="projects">
-            <section class="project">
-                <div style="margin: 20px;">
-
-                    <h1 style="display: inline-block;">Vergi Bot </h1>
-                    <small style="display: inline-block;">Aug 2020 to feb 2021</small>
-                    <h2>Teck used</h2>
-                    <p>ROS, Python, OpenCV, MQTT(IoT),Google App Scripting, HTML ,CSS</p>
-                    <li>
-                        <ul> Simulate an 3D abstract Warehouse Management System on Gazebo Software</ul>
-                        <ul>Using Robotics Arm Manipulation and OpenCV for Robotic Perception system , Implemented a
-                            sorting system for different box models or package based on medical priority</ul>
-                        <ul>
-                            Used MQTT protocol and Google app scripting to update package shipping and delivery data on
-                            Google Sheets,
-                            Push Notifications on E-Mail and AJAX for updating on a dynamic webpage for warehouse
-                            office.
-                        </ul>
-                    </li>
-                </div>
-                <div style="display: flex; ">
-                    <iframe height="400" width="600" src="https://www.youtube.com/embed/Eq9xviyJ1mA?start=5">
-                    </iframe>
-
-                </div>
-            </section>
-
-            <section class="project">
-                <div style="margin: 20px;">
-
-                    <h1> Construct o Bot <small> 22 58</small> </h1>
-                    <h2>tech used</h2>
-                    <p> V-Rep, Embedded C, Atmega2560, Servo and encode motors</p>
-                    <li>
-                        <ul>
-                            Designed and Developed a 2 wheeled Robot in Team of 4 with Line Following, Path Planning and
-                            Pick-Place
-                            Capabilities for Disaster Management
-                        </ul>
-                        <ul>
-                            Wrote Code for Wall Following and White Line Following
-                        </ul>
-                        <ul>
-                            Interfaced LCD and White Line Sensor on Robot
-                        </ul>
-                        <ul>
-                            Fabricated Power Circuit on PCB
-                        </ul>
-                    </li>
-
-                </div>
-                <div>
-                    <iframe height="400" width="600" src="https://www.youtube.com/embed/82tKKhvgv_E?start=54">
-                    </iframe>
-
-                </div>
-            </section>
-
-
-        </div>
-
-        <section id="certificates">
-            <div id="page_3" class="third_page overflow-auto">
-                <div class="certi_box">
-                    <h1 class="certi" style="color: white;  font: 35px monospace; ">My Certifications</h1>
-                    <div class="coursera"><a class="course_names"
-                            href="https://www.coursera.org/account/accomplishments/certificate/D9CDYDQKKDP3"
-                            target="_blank">Algorithmic Toolbox <br>-Coursera </a></div>
-                    <div class="coursera"><a class="course_names"
-                            href="https://www.coursera.org/account/accomplishments/certificate/H6ZLFRCKGWWN"
-                            target="_blank">Python data structure<br> -Coursera </a></div>
-                    <div class="coursera"><a class="course_names"
-                            href="https://www.coursera.org/account/accomplishments/certificate/RMVQQ2ARKZ8K"
-                            target="_blank">AWS Cloud Technical Essentials<br> -Coursera </a></div>
-                </div>
         </section>
 
-        <section id="contact">
-            <div>phone</div>
-            <div> email </div>
-            <div>instagram</div>
+        <section id="projects" class="section projects-section">
+            <h2 class="section-title">Projects</h2>
+            
+            <article class="project-card">
+                <div class="project-info">
+                    <h3 class="project-title">Vergi Bot</h3>
+                    <small class="project-date">Aug 2020 - Feb 2021</small>
+                    <div class="tech-stack">
+                        <strong>Tech Used:</strong> ROS, Python, OpenCV, MQTT(IoT), Google App Scripting, HTML, CSS
+                    </div>
+                    <ul class="project-details">
+                        <li>Simulate a 3D abstract Warehouse Management System on Gazebo Software.</li>
+                        <li>Used Robotics Arm Manipulation and OpenCV for Robotic Perception system. Implemented a sorting system for different box models or packages based on medical priority.</li>
+                        <li>Used MQTT protocol and Google App Scripting to update package shipping and delivery data on Google Sheets.</li>
+                        <li>Implemented Push Notifications on E-Mail and AJAX for updating on a dynamic webpage for warehouse office.</li>
+                    </ul>
+                </div>
+                <div class="project-media">
+                    <iframe src="https://www.youtube.com/embed/Eq9xviyJ1mA?start=5" title="Vergi Bot Video" allowfullscreen></iframe>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-info">
+                    <h3 class="project-title">Construct o Bot</h3>
+                    <small class="project-date">22 - 58</small> <!-- Preserved original text but looks odd, assume meaningful -->
+                    <div class="tech-stack">
+                        <strong>Tech Used:</strong> V-Rep, Embedded C, Atmega2560, Servo and encoder motors
+                    </div>
+                    <ul class="project-details">
+                        <li>Designed and Developed a 2 wheeled Robot in Team of 4 with Line Following, Path Planning and Pick-Place Capabilities for Disaster Management.</li>
+                        <li>Wrote Code for Wall Following and White Line Following.</li>
+                        <li>Interfaced LCD and White Line Sensor on Robot.</li>
+                        <li>Fabricated Power Circuit on PCB.</li>
+                    </ul>
+                </div>
+                <div class="project-media">
+                    <iframe src="https://www.youtube.com/embed/82tKKhvgv_E?start=54" title="Construct o Bot Video" allowfullscreen></iframe>
+                </div>
+            </article>
+        </section>
+
+        <section id="certificates" class="section certificates-section">
+            <div class="container">
+                <h2 class="section-title text-white">My Certifications</h2>
+                <div class="certificates-list">
+                    <div class="certificate-item">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/D9CDYDQKKDP3" target="_blank" class="certificate-link">
+                            Algorithmic Toolbox <br> - Coursera
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/H6ZLFRCKGWWN" target="_blank" class="certificate-link">
+                            Python Data Structures <br> - Coursera
+                        </a>
+                    </div>
+                    <div class="certificate-item">
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/RMVQQ2ARKZ8K" target="_blank" class="certificate-link">
+                            AWS Cloud Technical Essentials <br> - Coursera
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-links">
+                <div class="contact-item">Phone: [Phone Number]</div>
+                <div class="contact-item">Email: [Email Address]</div>
+                <div class="contact-item">Instagram</div>
+            </div>
         </section>
 
     </main>
 
-    <footer id="footer" class="flex-all-center">
-        <p> Designed and maintained by </p>
-        <p>Prashant Singh</p>
-        <p>&copy;</p>
-
-
+    <footer id="main-footer">
+        <div class="container footer-content">
+            <p>Designed and maintained by Prashant Singh &copy; 2025</p>
+        </div>
     </footer>
-</body>
 
+</body>
 </html>

@@ -1,27 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Ubuntu:wght@300;400;700&display=swap');
+
+:root {
+    /* Color Palette - Modern Dark Theme */
+    --bg-primary: #0a192f;
+    --bg-secondary: #000000;
+    --text-primary: #ccd6f6;
+    --text-secondary: #8892b0;
+    --accent-color: #64ffda;
+    --card-bg: #112240;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;   /* 8px */
+    --spacing-sm: 1rem;     /* 16px */
+    --spacing-md: 2rem;     /* 32px */
+    --spacing-lg: 4rem;     /* 64px */
+    --spacing-xl: 8rem;     /* 128px */
+
+    /* Typography */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Ubuntu', sans-serif;
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+a {
     text-decoration: none;
-}
-body{
-    font-family: 'Ubuntu', sans-serif;
-}
-#header{
-    position: sticky;
-    top : 0px;
-    z-index: 1030;
- 
+    color: inherit;
+    transition: color 0.3s ease;
 }
 
-#footer{
-    height: 60px;
-    background-color: blue;
-    flex-direction: column;
+ul {
+    list-style: none;
 }
 
-.flex-all-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Utility Classes */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.section {
+    padding: var(--spacing-lg) 0;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+}
+
+.text-accent {
+    color: var(--accent-color);
 }

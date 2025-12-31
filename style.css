@@ -1,62 +1,245 @@
+/* Main Styles */
 
+/* Header & Navbar */
+#main-header {
+    background-color: rgba(10, 25, 47, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+    padding: var(--spacing-sm) 0;
+}
 
-header{
-    border: 3px solid rgb(233, 18, 18);
-    background-color: rgb(54, 28, 150);
-    padding: 0px;
-    float: sticky;
+.navbar {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    /* Center on mobile */
+    align-items: center;
 }
 
-li{
-    border: 2px solid rgb(20, 19, 19);
-    display: inline-block;
-    padding: 15px;
-    margin: 0 20px;
-}
-
-a{
-    
-    font-size: large;
-    color: white;
-    
-}
-
-img{
-    display: inline-block;
-    border: 2px solid black;
-}
-#about-me{
+.nav-list {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    gap: var(--spacing-md);
 }
 
-#projects{
-    background-color: chartreuse;
-    border: 2px solid blue;
+.nav-link {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    padding-top: var(--spacing-xl);
+    /* Offset for fixed header */
 }
 
-#certificates{
-  
-    height: 200px;
-    background-color: blueviolet;
-    border: 2px dotted green;
-}
-#contact{
- 
-    height: 200px;
-    background-color: blueviolet;
-    border: 2px dotted green;
-}
-.project{
+.hero-container {
     display: flex;
-    width: 90%;
-    justify-content: center ;
-    flex-basis: 500px;
+    flex-direction: column-reverse;
+    /* Image top on mobile if desired, but let's keep bio top usually. Actually standard is bio top on mobile often. Let's try column-reverse to put image bottom or top? Let's just use column. */
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.bio {
+    flex: 1;
+    text-align: center;
+}
+
+.bio p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.profile-image-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Projects Section */
+.projects-section {
+    background-color: var(--bg-primary);
+    /* Same bg, use cards */
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.project-title {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.project-date {
+    display: block;
+    color: var(--accent-color);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.tech-stack {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-details {
+    margin-left: var(--spacing-sm);
+    /* Bullet indent */
+    list-style: disc;
+    /* Bring back bullets */
+    color: var(--text-secondary);
+}
+
+.project-details li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.project-media {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.project-media iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Certificates Section */
+.certificates-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+}
+
+.certificate-item {
+    background-color: var(--card-bg);
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-color);
+    transition: background-color 0.3s ease;
+}
+
+.certificate-item:hover {
+    background-color: rgba(100, 255, 218, 0.05);
+}
+
+.certificate-link {
+    display: block;
+    font-weight: 600;
+}
+
+/* Contact Section */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.contact-item {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+/* Footer */
+#main-footer {
+    text-align: center;
+    padding: var(--spacing-md) 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+
+/* Tablet & Desktop */
+@media (min-width: 768px) {
+    .container {
+        width: 80%;
+    }
+
+    /* Navbar */
+    .navbar {
+        justify-content: flex-end;
+        /* Align right on desktop */
+        padding-right: var(--spacing-md);
+    }
+
+    /* Hero */
+    .hero-container {
+        flex-direction: row;
+        /* Side by side */
+        text-align: left;
+    }
+
+    .bio {
+        text-align: left;
+    }
+
+    .profile-image-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    /* Projects */
+    .project-card {
+        flex-direction: row;
+        /* Info left, video right or vice versa */
+        align-items: center;
+    }
+
+    .project-info {
+        flex: 1;
+    }
+
+    .project-media {
+        flex: 1;
+        height: auto;
+        /* Allow aspect ratio */
+    }
+
+    /* Certificates */
+    .certificates-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--spacing-md);
+    }
 }
