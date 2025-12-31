@@ -1,24 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Ubuntu:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap');
 
 :root {
-    /* Color Palette - Modern Dark Theme */
-    --bg-primary: #0a192f;
-    --bg-secondary: #000000;
-    --text-primary: #ccd6f6;
-    --text-secondary: #8892b0;
-    --accent-color: #64ffda;
-    --card-bg: #112240;
-    
+    /* Color Palette - Light Professional (Clean & crisp) */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    /* Light gray for sections */
+    --text-primary: #212529;
+    /* Dark gray for text */
+    --text-secondary: #6c757d;
+    /* Muted gray */
+    --accent-color: #007bff;
+    /* Standard Professional Blue */
+    --accent-hover: #0056b3;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+
     /* Spacing */
-    --spacing-xs: 0.5rem;   /* 8px */
-    --spacing-sm: 1rem;     /* 16px */
-    --spacing-md: 2rem;     /* 32px */
-    --spacing-lg: 4rem;     /* 64px */
-    --spacing-xl: 8rem;     /* 128px */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
 
     /* Typography */
-    --font-heading: 'Poppins', sans-serif;
-    --font-body: 'Ubuntu', sans-serif;
+    --font-heading: 'Heebo', sans-serif;
+    /* Clean sans-serif */
+    --font-body: 'Heebo', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
 }
 
 * {
@@ -29,6 +37,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
@@ -36,13 +45,12 @@ body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
-    font-size: 16px;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 ul {
@@ -58,7 +66,7 @@ img {
 /* Utility Classes */
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1140px;
     margin: 0 auto;
     padding: 0 var(--spacing-sm);
 }
@@ -67,25 +75,60 @@ img {
     padding: var(--spacing-lg) 0;
 }
 
+.section:nth-child(even) {
+    background-color: var(--bg-secondary);
+}
+
 .section-title {
-    font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
     color: var(--text-primary);
     margin-bottom: var(--spacing-md);
+    text-align: center;
     position: relative;
-    display: inline-block;
+    padding-bottom: 1rem;
 }
 
 .section-title::after {
     content: '';
     position: absolute;
-    bottom: -10px;
-    left: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 60px;
     height: 4px;
     background-color: var(--accent-color);
+    border-radius: 2px;
 }
 
-.text-accent {
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-secondary {
+    border-color: var(--accent-color);
     color: var(--accent-color);
+    background: transparent;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 123, 255, 0.1);
 }

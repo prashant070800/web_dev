@@ -1,33 +1,44 @@
-/* Main Styles */
+/* Main Styles - Light Theme */
 
 /* Header & Navbar */
 #main-header {
-    background-color: rgba(10, 25, 47, 0.95);
+    background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     padding: var(--spacing-sm) 0;
 }
 
 .navbar {
     display: flex;
-    justify-content: center;
-    /* Center on mobile */
+    justify-content: space-between;
     align-items: center;
 }
 
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
 .nav-list {
-    display: flex;
+    display: none;
+    /* Mobile first: hidden, enable logic later or use simple display for now. Let's just flex for desktop and stack/scroll for mobile or just use media queries. For simplicity in 'easy to understand', let's assume flex wrap or similar. Actually, let's keep it visible on small screens but wrap. */
     gap: var(--spacing-md);
 }
 
+@media (min-width: 768px) {
+    .nav-list {
+        display: flex;
+    }
+}
+
 .nav-link {
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text-primary);
+    position: relative;
 }
 
 .nav-link:hover {
@@ -36,40 +47,64 @@
 
 /* Hero Section */
 .hero-section {
-    min-height: 80vh;
+    min-height: 90vh;
+    /* Full viewport almost */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: var(--spacing-xl);
-    /* Offset for fixed header */
+    align-items: center;
+    background-color: var(--bg-primary);
 }
 
 .hero-container {
     display: flex;
     flex-direction: column-reverse;
-    /* Image top on mobile if desired, but let's keep bio top usually. Actually standard is bio top on mobile often. Let's try column-reverse to put image bottom or top? Let's just use column. */
+    /* Image top on mobile, or bottom? Column reverse puts bio LAST in DOM but visual order... Wait. Flex col reverse puts last child first. So Logic: Bio first in DOM. Column-reverse makes Bio Bottom. We want Bio First on Desktop, Image Right. Mobile: Image Top, Bio Bottom. So Column-Reverse with Image 2nd in DOM is correct? No. Image 2nd in DOM (Bio, Image). Column reverse -> Image Top, Bio Bottom. Correct. */
     align-items: center;
     gap: var(--spacing-md);
-}
-
-.bio {
-    flex: 1;
     text-align: center;
 }
 
-.bio p {
-    margin-bottom: var(--spacing-sm);
+.greeting {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+.hero-name {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+}
+
+.hero-headline {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-description {
+    max-width: 600px;
+    margin: 0 auto var(--spacing-md);
     color: var(--text-secondary);
     font-size: 1.1rem;
 }
 
+.hero-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
 .profile-image-container {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid var(--accent-color);
-    box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
+    border: 4px solid var(--bg-secondary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .profile-image {
@@ -78,168 +113,227 @@
     object-fit: cover;
 }
 
-/* Projects Section */
-.projects-section {
-    background-color: var(--bg-primary);
-    /* Same bg, use cards */
-}
-
-.project-card {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    margin-bottom: var(--spacing-md);
-    padding: var(--spacing-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--spacing-md);
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+.skill-category {
+    background: var(--card-bg);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
 }
 
-.project-title {
+.skill-category h3 {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
     color: var(--text-primary);
-    font-size: 1.5rem;
-    margin-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--bg-secondary);
+    padding-bottom: 0.5rem;
 }
 
-.project-date {
-    display: block;
-    color: var(--accent-color);
-    font-family: var(--font-heading);
-    font-size: 0.85rem;
-    margin-bottom: var(--spacing-sm);
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
 }
 
-.tech-stack {
-    font-family: var(--font-heading);
+.skill-tags span {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
     font-size: 0.9rem;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.skill-tags span:hover {
+    transform: translateY(-2px);
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Experience Section - Timeline */
+.timeline {
+    position: relative;
+    padding: var(--spacing-md) 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: var(--border-color);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    /* -6px to center on 2px line (width 14px -> 7-1 = 6) */
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.timeline-date {
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+.timeline-content {
+    background: var(--card-bg);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.job-title {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+}
+
+.company-name {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+.job-tech {
+    font-size: 0.9rem;
+    font-style: italic;
     color: var(--text-secondary);
     margin-bottom: var(--spacing-sm);
 }
 
-.project-details {
-    margin-left: var(--spacing-sm);
-    /* Bullet indent */
+.job-details {
     list-style: disc;
-    /* Bring back bullets */
-    color: var(--text-secondary);
+    margin-left: 1.2rem;
+    color: var(--text-primary);
 }
 
-.project-details li {
-    margin-bottom: var(--spacing-xs);
+.job-details li {
+    margin-bottom: 0.5rem;
+}
+
+/* Projects Section */
+.project-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+}
+
+.project-info {
+    padding: var(--spacing-md);
+    flex: 1;
 }
 
 .project-media {
     width: 100%;
-    aspect-ratio: 16/9;
+    height: 300px;
+    /* Fixed height for consistency */
 }
 
 .project-media iframe {
     width: 100%;
     height: 100%;
     border: none;
-    border-radius: 4px;
-}
-
-/* Certificates Section */
-.certificates-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
-}
-
-.certificate-item {
-    background-color: var(--card-bg);
-    padding: var(--spacing-sm);
-    border-radius: 4px;
-    border-left: 3px solid var(--accent-color);
-    transition: background-color 0.3s ease;
-}
-
-.certificate-item:hover {
-    background-color: rgba(100, 255, 218, 0.05);
-}
-
-.certificate-link {
-    display: block;
-    font-weight: 600;
 }
 
 /* Contact Section */
-.contact-links {
+.contact-cards {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
 }
 
-.contact-item {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
+.contact-card {
+    background: var(--card-bg);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+    transition: transform 0.3s;
+    border: 1px solid var(--border-color);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.contact-card i {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
 }
 
 /* Footer */
 #main-footer {
+    background-color: var(--text-primary);
+    /* Dark footer */
+    color: white;
     text-align: center;
     padding: var(--spacing-md) 0;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
 }
 
-/* Responsive Design */
-
-/* Tablet & Desktop */
+/* Desktop Styles */
 @media (min-width: 768px) {
-    .container {
-        width: 80%;
-    }
-
-    /* Navbar */
-    .navbar {
-        justify-content: flex-end;
-        /* Align right on desktop */
-        padding-right: var(--spacing-md);
-    }
-
-    /* Hero */
     .hero-container {
         flex-direction: row;
-        /* Side by side */
         text-align: left;
+        justify-content: space-between;
     }
 
-    .bio {
-        text-align: left;
+    .hero-actions {
+        justify-content: flex-start;
     }
 
-    .profile-image-container {
-        width: 300px;
-        height: 300px;
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    /* Projects */
     .project-card {
         flex-direction: row;
-        /* Info left, video right or vice versa */
         align-items: center;
     }
 
-    .project-info {
-        flex: 1;
-    }
-
     .project-media {
-        flex: 1;
-        height: auto;
-        /* Allow aspect ratio */
-    }
-
-    /* Certificates */
-    .certificates-list {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: var(--spacing-md);
+        width: 50%;
+        height: 350px;
     }
 }

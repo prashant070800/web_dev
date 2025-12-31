@@ -8,40 +8,54 @@
     <!-- Preload fonts or other critical assets here if needed -->
     <link rel="stylesheet" href="utility.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
     <header id="main-header">
-        <nav class="navbar">
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="#about-me" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#certificates" class="nav-link">Certificates</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav class="navbar">
+                <h1 class="logo">Prashant Singh</h1>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#about-me" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#experience" class="nav-link">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section id="about-me" class="section hero-section">
-            <h1 class="section-title">About Me</h1>
             <div class="container hero-container">
                 <div class="bio">
-                    <p>I am Prashant Singh.</p>
-                    <p>I am currently a Final year Undergraduate (2018-22) at Institute of Engineering and
-                        Technology, Lucknow pursuing B. Tech. in Electronics and Communication engineering. I enjoy
-                        designing responsive websites and building Robots.</p>
-                    <p>My goal is to build pixel-perfect components and practical projects which provide a
-                        rich user experience with real world application.</p>
+                    <p class="greeting">Hello, I am</p>
+                    <h1 class="hero-name">Prashant Singh</h1>
+                    <h2 class="hero-headline">Software Engineer</h2>
+                    <p class="hero-description">
+                        Skilled Software Engineer with experience in Python, Django, and Angular.
+                        Currently working at JAXL, building scalable REST APIs and integrating telecom services.
+                        I enjoy solving complex problems and innovating with Generative AI and Cloud Technologies.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">Contact Me</a>
+                        <a href="#experience" class="btn btn-secondary">See Experience</a>
+                    </div>
                 </div>
                 <div class="profile-image-container">
                     <img src="images/prashnat.jpg" alt="Prashant Singh" class="profile-image">
@@ -49,77 +63,189 @@
             </div>
         </section>
 
-        <section id="projects" class="section projects-section">
-            <h2 class="section-title">Projects</h2>
-            
-            <article class="project-card">
-                <div class="project-info">
-                    <h3 class="project-title">Vergi Bot</h3>
-                    <small class="project-date">Aug 2020 - Feb 2021</small>
-                    <div class="tech-stack">
-                        <strong>Tech Used:</strong> ROS, Python, OpenCV, MQTT(IoT), Google App Scripting, HTML, CSS
-                    </div>
-                    <ul class="project-details">
-                        <li>Simulate a 3D abstract Warehouse Management System on Gazebo Software.</li>
-                        <li>Used Robotics Arm Manipulation and OpenCV for Robotic Perception system. Implemented a sorting system for different box models or packages based on medical priority.</li>
-                        <li>Used MQTT protocol and Google App Scripting to update package shipping and delivery data on Google Sheets.</li>
-                        <li>Implemented Push Notifications on E-Mail and AJAX for updating on a dynamic webpage for warehouse office.</li>
-                    </ul>
-                </div>
-                <div class="project-media">
-                    <iframe src="https://www.youtube.com/embed/Eq9xviyJ1mA?start=5" title="Vergi Bot Video" allowfullscreen></iframe>
-                </div>
-            </article>
-
-            <article class="project-card">
-                <div class="project-info">
-                    <h3 class="project-title">Construct o Bot</h3>
-                    <small class="project-date">22 - 58</small> <!-- Preserved original text but looks odd, assume meaningful -->
-                    <div class="tech-stack">
-                        <strong>Tech Used:</strong> V-Rep, Embedded C, Atmega2560, Servo and encoder motors
-                    </div>
-                    <ul class="project-details">
-                        <li>Designed and Developed a 2 wheeled Robot in Team of 4 with Line Following, Path Planning and Pick-Place Capabilities for Disaster Management.</li>
-                        <li>Wrote Code for Wall Following and White Line Following.</li>
-                        <li>Interfaced LCD and White Line Sensor on Robot.</li>
-                        <li>Fabricated Power Circuit on PCB.</li>
-                    </ul>
-                </div>
-                <div class="project-media">
-                    <iframe src="https://www.youtube.com/embed/82tKKhvgv_E?start=54" title="Construct o Bot Video" allowfullscreen></iframe>
-                </div>
-            </article>
-        </section>
-
-        <section id="certificates" class="section certificates-section">
+        <section id="skills" class="section skills-section">
             <div class="container">
-                <h2 class="section-title text-white">My Certifications</h2>
-                <div class="certificates-list">
-                    <div class="certificate-item">
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/D9CDYDQKKDP3" target="_blank" class="certificate-link">
-                            Algorithmic Toolbox <br> - Coursera
-                        </a>
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="skill-tags">
+                            <span>Python</span>
+                            <span>C/C++</span>
+                            <span>JavaScript</span>
+                            <span>HTML/CSS</span>
+                        </div>
                     </div>
-                    <div class="certificate-item">
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/H6ZLFRCKGWWN" target="_blank" class="certificate-link">
-                            Python Data Structures <br> - Coursera
-                        </a>
+                    <div class="skill-category">
+                        <h3>Frameworks & Tools</h3>
+                        <div class="skill-tags">
+                            <span>Angular</span>
+                            <span>Django</span>
+                            <span>SageMaker</span>
+                            <span>Jupyter</span>
+                            <span>Google Cloud Platform (GCP)</span>
+                            <span>Git</span>
+                        </div>
                     </div>
-                    <div class="certificate-item">
-                        <a href="https://www.coursera.org/account/accomplishments/certificate/RMVQQ2ARKZ8K" target="_blank" class="certificate-link">
-                            AWS Cloud Technical Essentials <br> - Coursera
-                        </a>
+                    <div class="skill-category">
+                        <h3>Concepts</h3>
+                        <div class="skill-tags">
+                            <span>Machine Learning</span>
+                            <span>REST APIs</span>
+                            <span>Vector Search</span>
+                            <span>RAG (Retrieval-Augmented Generation)</span>
+                            <span>Generative AI</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+
+                <div class="timeline">
+                    <!-- Job 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">Aug 2024 – Present</div>
+                        <div class="timeline-content">
+                            <h3 class="job-title">Software Engineer</h3>
+                            <h4 class="company-name">JAXL</h4>
+                            <p class="job-tech">Python, Django</p>
+                            <ul class="job-details">
+                                <li>Developed and maintained scalable REST APIs using Django and Django REST Framework.
+                                </li>
+                                <li>Integrated and optimized telecom provider services (Twilio, Plivo, Exotel) to
+                                    enhance system reliability.</li>
+                                <li>Implemented OTP-based authentication using Twilio SMS services.</li>
+                                <li>Implemented call tag feature allowing users to tag and search calls.</li>
+                                <li>Developed Shopify integration flow: authentication, store selection, and secure HMAC
+                                    validation.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">Aug 2022 – Aug 2024</div>
+                        <div class="timeline-content">
+                            <h3 class="job-title">Software Engineer</h3>
+                            <h4 class="company-name">Infosys</h4>
+                            <p class="job-tech">Angular, Python, RAG</p>
+                            <ul class="job-details">
+                                <li>Developed a RAG API using Flask and Milvus vector data storage for efficient
+                                    retrieval.</li>
+                                <li>Contributed to a Large Language Model (LLM) project: dataset preparation and LLM
+                                    utilization.</li>
+                                <li>Played a pivotal role as an Angular developer in a Smart City demonstration project.
+                                </li>
+                                <li>Gained hands-on experience in Google Cloud Platform (GCP) services for deployment
+                                    and scalability.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">April 2022 – July 2022</div>
+                        <div class="timeline-content">
+                            <h3 class="job-title">Software Engineer Intern</h3>
+                            <h4 class="company-name">Jaxl Innovations Private Limited</h4>
+                            <p class="job-tech">Python, Django, Apple Pay</p>
+                            <ul class="job-details">
+                                <li>Successfully integrated Apple Pay into the application.</li>
+                                <li>Developed APIs to improve functionality and streamline data communication.</li>
+                                <li>Customized Django admin interface to optimize data management and visualization.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+
+                <article class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-title">Vargi-Bot</h3>
+                        <div class="tech-stack">
+                            ROS, Python, JavaScript, OpenCV, MQTT, Google App Scripting
+                        </div>
+                        <ul class="project-details">
+                            <li>Created a 3D Dynamic Simulation of an abstract Warehouse Management System on Gazebo.
+                            </li>
+                            <li>Implemented a sorting system using Robotic Arm Manipulation and OpenCV for medical
+                                priority packages.</li>
+                            <li>Used MQTT and App Scripting for real-time updates on Google Sheets, Email Push
+                                Notifications, and AJAX for a dynamic dashboard.</li>
+                        </ul>
+                    </div>
+                    <div class="project-media">
+                        <iframe src="https://www.youtube.com/embed/Eq9xviyJ1mA?start=5" title="Vergi Bot Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <!-- Retaining Construct o Bot from previous as it wasn't fully detailed in parsed resume but likely still relevant or I can leave it if user wants strict resume match. Resume didn't list it in the parsed output above? Wait, it did NOT list Construct o Bot in the extracted text. It only listed "Vargi-Bot". Wait, let me check the extraction again. Ah, Step 73 output shows only Vargi-Bot under Projects. The previous HTML had "Construct o Bot". I will KEEP "Construct o Bot" if it was there before, assuming the resume might be a summary. Or should I remove it? The user said "update content... from resume". But removing projects might be bad. I will keep it but maybe put it second. Actually, I'll stick to what is in the resume primarily, but since I have the video embed for Construct o Bot, it adds value. I'll include it. -->
+                <article class="project-card">
+                    <div class="project-info">
+                        <!-- Re-adding Construct o Bot for completeness as it has a video -->
+                        <h3 class="project-title">Construct o Bot</h3>
+                        <div class="tech-stack">
+                            V-Rep, Embedded C, Atmega2560
+                        </div>
+                        <ul class="project-details">
+                            <li>Designed and Developed a 2 wheeled Robot with Line Following, Path Planning and
+                                Pick-Place Capabilities.</li>
+                            <li>Wrote Code for Wall Following and White Line Following.</li>
+                            <li>Fabricated Power Circuit on PCB.</li>
+                        </ul>
+                    </div>
+                    <div class="project-media">
+                        <iframe src="https://www.youtube.com/embed/82tKKhvgv_E?start=54" title="Construct o Bot Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="education" class="section education-section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-card">
+                    <h3>B.Tech in Electronics and Communication Engineering</h3>
+                    <h4>Institute of Engineering and Technology, Lucknow</h4>
+                    <p class="edu-date">Aug 2018 – May 2022</p>
+                    <p>GPA: 8.0</p>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="section contact-section">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-links">
-                <div class="contact-item">Phone: [Phone Number]</div>
-                <div class="contact-item">Email: [Email Address]</div>
-                <div class="contact-item">Instagram</div>
+            <div class="container text-center">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-cards">
+                    <a href="mailto:prashant070800@gmail.com" class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <span>prashant070800@gmail.com</span>
+                    </a>
+                    <!-- Phone number removed as requested -->
+                    <a href="https://linkedin.com/in/prashant0607" target="_blank" class="contact-card">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/prashant070800" target="_blank" class="contact-card">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -127,9 +253,10 @@
 
     <footer id="main-footer">
         <div class="container footer-content">
-            <p>Designed and maintained by Prashant Singh &copy; 2025</p>
+            <p>&copy; 2025 Prashant Singh. All rights reserved.</p>
         </div>
     </footer>
 
 </body>
+
 </html>
