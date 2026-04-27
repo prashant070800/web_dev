@@ -1,30 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Prashant Singh | Portfolio</title>
+    <!-- Preload fonts or other critical assets here if needed -->
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <header>
-        <nav>
-            <li>
-                <ul>
 
+    <header id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <h1 class="logo">Prashant Singh</h1>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#about-me" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#experience" class="nav-link">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
                 </ul>
-            </li>
-        </nav>
+            </nav>
+        </div>
     </header>
-    
-    <main>
 
+    <main>
+        <section id="about-me" class="section hero-section">
+            <div class="container hero-container">
+                <div class="bio">
+                    <p class="greeting">Hello, I am</p>
+                    <h1 class="hero-name">Prashant Singh</h1>
+                    <h2 class="hero-headline">Software Engineer</h2>
+                    <p class="hero-description">
+                        Software Engineer with 3+ years building scalable backend systems, REST APIs, and AI-driven applications.
+                        Experienced in Python, Django, Angular, cloud platforms, and telecom integrations.
+                        I enjoy solving complex problems and innovating with Generative AI and RAG pipelines.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">Contact Me</a>
+                        <a href="#experience" class="btn btn-secondary">See Experience</a>
+                    </div>
+                </div>
+                <div class="profile-image-container">
+                    <img src="images/prashnat.jpg" alt="Prashant Singh" class="profile-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="skill-tags">
+                            <span>Python</span>
+                            <span>JavaScript</span>
+                            <span>C/C++</span>
+                            <span>HTML/CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frameworks & Databases</h3>
+                        <div class="skill-tags">
+                            <span>Django</span>
+                            <span>Django REST Framework</span>
+                            <span>Flask</span>
+                            <span>Angular</span>
+                            <span>PostgreSQL</span>
+                            <span>MongoDB</span>
+                            <span>Milvus</span>
+                            <span>Redis</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Cloud & Other</h3>
+                        <div class="skill-tags">
+                            <span>GCP</span>
+                            <span>AWS SageMaker</span>
+                            <span>Twilio</span>
+                            <span>Plivo</span>
+                            <span>Exotel</span>
+                            <span>ROS</span>
+                            <span>MQTT</span>
+                            <span>OpenCV</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Aug 2024 – Present</div>
+                        <div class="timeline-content">
+                            <h3 class="job-title">Software Engineer</h3>
+                            <h4 class="company-name">JAXL</h4>
+                            <p class="job-tech">Python, Django</p>
+                            <ul class="job-details">
+                                <li>Integrated Plivo for outbound/inbound calling and Twilio for voice verification and
+                                    OTP-based SMS authentication, enabling secure and reliable telecom workflows.</li>
+                                <li>Built a call tag feature enabling agents to annotate and full-text search calls by
+                                    custom tags, reducing average call retrieval time.</li>
+                                <li>Architected a high-scale Call Campaign Engine supporting Manual, IVR, and AI-driven
+                                    conversational calling modules with decoupled agent execution.</li>
+                                <li>Investigated and resolved PostgreSQL index bloat on the latest_activity datetime field,
+                                    redesigning the update strategy to restore query performance.</li>
+                                <li>Implemented Shopify integration flow: authentication, store selection, and secure HMAC
+                                    validation.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">Aug 2022 – Aug 2024</div>
+                        <div class="timeline-content">
+                            <h3 class="job-title">Software Engineer</h3>
+                            <h4 class="company-name">Infosys</h4>
+                            <p class="job-tech">Angular, Python, RAG</p>
+                            <ul class="job-details">
+                                <li>Developed a RAG API using Flask and Milvus vector data storage for efficient
+                                    retrieval.</li>
+                                <li>Contributed to a Large Language Model (LLM) project: dataset preparation and LLM
+                                    utilization.</li>
+                                <li>Played a pivotal role as an Angular developer in a Smart City demonstration project.
+                                </li>
+                                <li>Gained hands-on experience in Google Cloud Platform (GCP) services for deployment
+                                    and scalability.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">April 2022 – July 2022</div>
+                        <div class="timeline-content">
+                            <h3 class="job-title">Software Engineer Intern</h3>
+                            <h4 class="company-name">Jaxl Innovations Private Limited</h4>
+                            <p class="job-tech">Python, Django, Apple Pay</p>
+                            <ul class="job-details">
+                                <li>Successfully integrated Apple Pay into the application.</li>
+                                <li>Developed APIs to improve functionality and streamline data communication.</li>
+                                <li>Customized Django admin interface to optimize data management and visualization.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+
+                <article class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-title">Vargi-Bot</h3>
+                        <div class="tech-stack">
+                            ROS, Python, JavaScript, OpenCV, MQTT, Google App Scripting
+                        </div>
+                        <ul class="project-details">
+                            <li>Built a 3D dynamic warehouse simulation on Gazebo for the e-Yantra Robotics Competition
+                                (EYRC) as part of a 4-member team.</li>
+                            <li>Implemented a robotic arm sorting system using ROS Manipulation and OpenCV perception to
+                                classify packages by medical priority.</li>
+                            <li>Integrated MQTT and Google App Script to sync shipping and delivery data to Google Sheets,
+                                with email notifications and a live AJAX-updated dashboard.</li>
+                        </ul>
+                    </div>
+                    <div class="project-media">
+                        <iframe src="https://www.youtube.com/embed/Eq9xviyJ1mA?start=5" title="Vergi Bot Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-title">Construct o Bot</h3>
+                        <div class="tech-stack">
+                            V-Rep, Embedded C, Atmega2560
+                        </div>
+                        <ul class="project-details">
+                            <li>Designed and Developed a 2 wheeled Robot with Line Following, Path Planning and
+                                Pick-Place Capabilities.</li>
+                            <li>Wrote Code for Wall Following and White Line Following.</li>
+                            <li>Fabricated Power Circuit on PCB.</li>
+                        </ul>
+                    </div>
+                    <div class="project-media">
+                        <iframe src="https://www.youtube.com/embed/82tKKhvgv_E?start=54" title="Construct o Bot Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="education" class="section education-section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-card">
+                    <h3>B.Tech in Electronics and Communication Engineering</h3>
+                    <h4>Institute of Engineering and Technology, Lucknow</h4>
+                    <p class="edu-date">Aug 2018 – May 2022</p>
+                    <p>GPA: 8.0</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="container text-center">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-cards">
+                    <a href="mailto:prashant070800@gmail.com" class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <span>prashant070800@gmail.com</span>
+                    </a>
+                    <a href="https://linkedin.com/in/prashant0607" target="_blank" class="contact-card">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/prashant070800" target="_blank" class="contact-card">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
     </main>
 
-    <footer>
-        
+    <footer id="main-footer">
+        <div class="container footer-content">
+            <p>&copy; 2025 Prashant Singh. All rights reserved.</p>
+        </div>
     </footer>
+
 </body>
 </html>
