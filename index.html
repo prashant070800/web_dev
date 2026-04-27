@@ -48,9 +48,9 @@
                     <h1 class="hero-name">Prashant Singh</h1>
                     <h2 class="hero-headline">Software Engineer</h2>
                     <p class="hero-description">
-                        Skilled Software Engineer with experience in Python, Django, and Angular.
-                        Currently working at JAXL, building scalable REST APIs and integrating telecom services.
-                        I enjoy solving complex problems and innovating with Generative AI and Cloud Technologies.
+                        Software Engineer with 3+ years building scalable backend systems, REST APIs, and AI-driven applications.
+                        Experienced in Python, Django, Angular, cloud platforms, and telecom integrations.
+                        I enjoy solving complex problems and innovating with Generative AI and RAG pipelines.
                     </p>
                     <div class="hero-actions">
                         <a href="#contact" class="btn btn-primary">Contact Me</a>
@@ -71,31 +71,35 @@
                         <h3>Languages</h3>
                         <div class="skill-tags">
                             <span>Python</span>
-                            <span>C/C++</span>
                             <span>JavaScript</span>
+                            <span>C/C++</span>
                             <span>HTML/CSS</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h3>Frameworks & Tools</h3>
+                        <h3>Frameworks & Databases</h3>
                         <div class="skill-tags">
-                            <span>Angular</span>
                             <span>Django</span>
-                            <span>SageMaker</span>
-                            <span>Jupyter</span>
-                            <span>Google Cloud Platform (GCP)</span>
-                            <span>Git</span>
-                            <span>Elasticsearch</span>
+                            <span>Django REST Framework</span>
+                            <span>Flask</span>
+                            <span>Angular</span>
+                            <span>PostgreSQL</span>
+                            <span>MongoDB</span>
+                            <span>Milvus</span>
+                            <span>Redis</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h3>Concepts</h3>
+                        <h3>Cloud & Other</h3>
                         <div class="skill-tags">
-                            <span>Machine Learning</span>
-                            <span>REST APIs</span>
-                            <span>Vector Search</span>
-                            <span>RAG (Retrieval-Augmented Generation)</span>
-                            <span>Generative AI</span>
+                            <span>GCP</span>
+                            <span>AWS SageMaker</span>
+                            <span>Twilio</span>
+                            <span>Plivo</span>
+                            <span>Exotel</span>
+                            <span>ROS</span>
+                            <span>MQTT</span>
+                            <span>OpenCV</span>
                         </div>
                     </div>
                 </div>
@@ -115,13 +119,15 @@
                             <h4 class="company-name">JAXL</h4>
                             <p class="job-tech">Python, Django</p>
                             <ul class="job-details">
-                                <li>Developed and maintained scalable REST APIs using Django and Django REST Framework.
-                                </li>
-                                <li>Integrated and optimized telecom provider services (Twilio, Plivo, Exotel) to
-                                    enhance system reliability.</li>
-                                <li>Implemented OTP-based authentication using Twilio SMS services.</li>
-                                <li>Implemented call tag feature allowing users to tag and search calls.</li>
-                                <li>Developed Shopify integration flow: authentication, store selection, and secure HMAC
+                                <li>Integrated Plivo for outbound/inbound calling and Twilio for voice verification and
+                                    OTP-based SMS authentication, enabling secure and reliable telecom workflows.</li>
+                                <li>Built a call tag feature enabling agents to annotate and full-text search calls by
+                                    custom tags, reducing average call retrieval time.</li>
+                                <li>Architected a high-scale Call Campaign Engine supporting Manual, IVR, and AI-driven
+                                    conversational calling modules with decoupled agent execution.</li>
+                                <li>Investigated and resolved PostgreSQL index bloat on the latest_activity datetime field,
+                                    redesigning the update strategy to restore query performance.</li>
+                                <li>Implemented Shopify integration flow: authentication, store selection, and secure HMAC
                                     validation.</li>
                             </ul>
                         </div>
@@ -177,12 +183,12 @@
                             ROS, Python, JavaScript, OpenCV, MQTT, Google App Scripting
                         </div>
                         <ul class="project-details">
-                            <li>Created a 3D Dynamic Simulation of an abstract Warehouse Management System on Gazebo.
-                            </li>
-                            <li>Implemented a sorting system using Robotic Arm Manipulation and OpenCV for medical
-                                priority packages.</li>
-                            <li>Used MQTT and App Scripting for real-time updates on Google Sheets, Email Push
-                                Notifications, and AJAX for a dynamic dashboard.</li>
+                            <li>Built a 3D dynamic warehouse simulation on Gazebo for the e-Yantra Robotics Competition
+                                (EYRC) as part of a 4-member team.</li>
+                            <li>Implemented a robotic arm sorting system using ROS Manipulation and OpenCV perception to
+                                classify packages by medical priority.</li>
+                            <li>Integrated MQTT and Google App Script to sync shipping and delivery data to Google Sheets,
+                                with email notifications and a live AJAX-updated dashboard.</li>
                         </ul>
                     </div>
                     <div class="project-media">
@@ -192,7 +198,7 @@
                     </div>
                 </article>
 
-                <!-- Retaining Construct o Bot from previous as it wasn't fully detailed in parsed resume but likely still relevant or I can leave it if user wants strict resume match. Resume didn't list it in the parsed output above? Wait, it did NOT list Construct o Bot in the extracted text. It only listed "Vargi-Bot". Wait, let me check the extraction again. Ah, Step 73 output shows only Vargi-Bot under Projects. The previous HTML had "Construct o Bot". I will KEEP "Construct o Bot" if it was there before, assuming the resume might be a summary. Or should I remove it? The user said "update content... from resume". But removing projects might be bad. I will keep it but maybe put it second. Actually, I'll stick to what is in the resume primarily, but since I have the video embed for Construct o Bot, it adds value. I'll include it. -->
+
                 <article class="project-card">
                     <div class="project-info">
                         <!-- Re-adding Construct o Bot for completeness as it has a video -->
