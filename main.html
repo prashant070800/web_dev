@@ -84,6 +84,7 @@
                             <span>Flask</span>
                             <span>Angular</span>
                             <span>PostgreSQL</span>
+                            <span>Supabase</span>
                             <span>MongoDB</span>
                             <span>Milvus</span>
                             <span>Redis</span>
@@ -97,6 +98,7 @@
                             <span>Twilio</span>
                             <span>Plivo</span>
                             <span>Exotel</span>
+                            <span>WebSockets</span>
                             <span>ROS</span>
                             <span>MQTT</span>
                             <span>OpenCV</span>
@@ -172,6 +174,23 @@
         <section id="projects" class="section projects-section">
             <div class="container">
                 <h2 class="section-title">Projects</h2>
+
+                <article class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-title">QWR AI Voice Bot</h3>
+                        <div class="tech-stack">
+                            Django Channels, PostgreSQL/Supabase, Gemini Live API, Exotel WebSockets, Telegram API, Python
+                        </div>
+                        <ul class="project-details">
+                            <li>Architected a production-ready, ultra-low latency (~350ms - 500ms TTFA) AI Voice Agent by decoupling the Telephony Layer (Exotel) from the AI Engine (Gemini Live API).</li>
+                            <li>Integrated Gemini's native multimodal Live API to enable bidirectional audio streaming, native barge-in (interruption handling), and high emotional resonance.</li>
+                            <li>Implemented proactive caller identity extraction via asynchronous LLM Function Calling and automated delivery of post-call summaries via a Telegram Bot.</li>
+                        </ul>
+                    </div>
+                    <div class="project-media">
+                        <img src="images/qwr_voice_bot.png" alt="QWR AI Voice Bot Design">
+                    </div>
+                </article>
 
                 <article class="project-card">
                     <div class="project-info">

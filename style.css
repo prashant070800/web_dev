@@ -263,10 +263,12 @@
     /* Fixed height for consistency */
 }
 
-.project-media iframe {
+.project-media iframe,
+.project-media img {
     width: 100%;
     height: 100%;
     border: none;
+    object-fit: cover;
 }
 
 /* Contact Section */
