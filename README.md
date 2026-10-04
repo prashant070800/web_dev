@@ -15,4 +15,20 @@ winget install MiKTeX.MiKTeX
 git config core.hooksPath .githooks
 ```
 
-To build manually: `powershell -ExecutionPolicy Bypass -File build-resume.ps1`
+### Build the PDF manually
+
+Run from the repo root (works in PowerShell, cmd, or Git Bash):
+
+```sh
+powershell -ExecutionPolicy Bypass -File build-resume.ps1
+```
+
+This writes `resume.pdf` and cleans up the LaTeX build files. On a LaTeX error it prints the error and leaves the old PDF untouched.
+
+## Preview the site locally
+
+```sh
+python -m http.server 8000
+```
+
+Then open http://localhost:8000.
