@@ -1,0 +1,10 @@
+#!/bin/sh
+# Rebuild resume.pdf whenever resume.tex is part of the commit, so the two never drift.
+if git diff --cached --name-only | grep -qx 'resume.tex'; then
+    echo "resume.tex changed - rebuilding resume.pdf..."
+    powershell.exe -NoProfile -ExecutionPolicy Bypass -File build-resume.ps1 || {
+        echo "Resume build failed; commit aborted."
+        exit 1
+    }
+    git add resume.pdf
+fi
