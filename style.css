@@ -448,14 +448,14 @@ strong {
 /* stats strip */
 .stats {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 12px;
     margin-top: 56px;
 }
 
 @media (min-width: 768px) {
     .stats {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -515,14 +515,6 @@ strong {
     height: 1px;
     background: var(--border);
     margin-left: 0.8rem;
-}
-
-.section-title.center {
-    justify-content: center;
-}
-
-.section-title.center::after {
-    display: none;
 }
 
 .chips {
@@ -805,7 +797,6 @@ strong {
 }
 
 .education {
-    margin-top: 28px;
     display: flex;
     gap: 16px;
     align-items: flex-start;
@@ -832,17 +823,38 @@ strong {
 
 /* ---------- Contact ---------- */
 .contact-inner {
-    max-width: 620px;
-    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.contact-inner .section-title {
+    align-self: stretch;
+}
+
+.contact-headline {
+    font-size: clamp(1.25rem, 3vw, 1.6rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    max-width: 680px;
+    margin-bottom: 1rem;
 }
 
 .contact-lead {
     color: var(--muted);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    max-width: 680px;
+    margin-bottom: 1rem;
+}
+
+.contact-lead:last-of-type {
     margin-bottom: 2rem;
+}
+
+.role-note {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin: -4px 0 10px;
 }
 
 .socials {
