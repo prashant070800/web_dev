@@ -62,6 +62,9 @@ REQUIRED_TEXT = [
 FORBIDDEN_TEXT = [
     # vargi-bot was a competition project, not built during a role
     ("study/projects/vargi-bot/index.html", "Built during"),
+    # the hub is unlisted: no Study link in any nav bar
+    ("study/index.html", 'class="nav-link active"'),
+    ("study/tech/django/index.html", 'class="nav-link active"'),
 ]
 
 EXTERNAL = re.compile(r"^(?:[a-z][a-z0-9+.-]*:|//|#)", re.I)

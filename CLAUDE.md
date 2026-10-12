@@ -36,9 +36,8 @@ Personal portfolio for Prashant Singh, served at https://hellops.in via GitHub P
 - Cross-links come only from front matter: `tech:` and `experience:` slugs on projects and roles. `_includes/related.html` derives every link, including backlinks on tech pages. `_includes/tag-link.html` renders a slug with no page as a dashed plain chip instead of a dead link. Don't hand-write links between study pages.
 - Interview questions live in front matter `questions:` (`q`/`a`) and are rendered by `_layouts/study-item.html` as `<details class="qa">`. Quote every `q:`, and any value containing a colon. `_config.yml` sets `strict_front_matter: true`, so a YAML error fails the build (otherwise Jekyll only warns and publishes the page with no front matter). `tech:` must be an inline list: a bare string makes `contains` substring-match and creates false backlinks, and `check_site.py` rejects it.
 - `_layouts/study.html` duplicates the portfolio `<head>` assets, header, nav, and footer. Change both when either changes.
-- Never give a `<section>` an `id` on study pages: `script.js` scroll-spies `main section[id]` and would clear the Study nav link's active state.
 - `_config.yml` `exclude` keeps repo-only files (`CLAUDE.md`, `README.md`, `docs/`, `tools/`, `resume.tex`, …) off the live site. Add new repo-only files there.
-- The hub is deliberately unlisted: nothing on the portfolio links to `/study/`, study pages are left out of `sitemap.xml`, and `_layouts/study.html` sets `noindex`. `check_site.py` enforces all three. It is still public to anyone with the URL (and the repo is public).
+- The hub is deliberately unlisted: no nav bar (portfolio or study) links to `/study/`, study pages are left out of `sitemap.xml`, and `_layouts/study.html` sets `noindex`. `check_site.py` enforces all three. It is still public to anyone with the URL (and the repo is public).
 - `tools/build-site.ps1` sets `PAGES_REPO_NWO` because `jekyll-github-metadata` can't read the repo name from the `github-personal` SSH remote.
 
 ## SEO metadata kept in sync
