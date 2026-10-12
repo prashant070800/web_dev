@@ -46,8 +46,8 @@ questions:
       Markdown answer.
 ```
 
-Quote any value that contains a colon (`summary: "Backend: APIs"`). Jekyll only warns about broken
-front matter, but the site check will fail.
+Quote any value that contains a colon (`summary: "Backend: APIs"`): invalid front matter fails the
+build (`strict_front_matter`). `tech:` must be an inline list of lowercase slugs, even for one tag.
 
 Tech pages list the projects and roles tagged with them automatically. A tag with no page yet
 shows as a dashed chip instead of a link.

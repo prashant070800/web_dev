@@ -4,6 +4,9 @@ title: Prashant Singh
 url: https://hellops.in
 repository: prashant070800/web_dev
 
+# Fail the build on invalid front matter instead of silently publishing a page without it
+strict_front_matter: true
+
 collections:
   projects:
     output: true

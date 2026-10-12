@@ -100,9 +100,29 @@ def resolve(page, ref):
     return target
 
 
+FRONT_MATTER = re.compile(r"\A---[ \t]*\n(.*?)^---[ \t]*$", re.S | re.M)
+SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+
+
+def front_matter(source):
+    match = FRONT_MATTER.match(source.read_text(encoding="utf-8"))
+    return match.group(1) if match else ""
+
+
 def question_count(source):
-    front_matter = source.read_text(encoding="utf-8").split("---")[1]
-    return len(re.findall(r"^\s*- q:", front_matter, re.M))
+    return len(re.findall(r"^\s*- q:", front_matter(source), re.M))
+
+
+def tech_errors(source):
+    """`tech:` must be an inline list of slugs: a bare string makes `contains` match substrings."""
+    match = re.search(r"^tech:[ \t]*(.*)$", front_matter(source), re.M)
+    if not match:
+        return []
+    value = match.group(1).strip()
+    if not (value.startswith("[") and value.endswith("]")):
+        return [f"tech must be an inline list, e.g. tech: [{value.strip('[]') or 'django'}]"]
+    slugs = [t.strip().strip("\"'") for t in value[1:-1].split(",") if t.strip()]
+    return [f"tech slug must be lowercase-with-dashes: {slug}" for slug in slugs if not SLUG.match(slug)]
 
 
 def main():
@@ -131,6 +151,11 @@ def main():
             if not page.exists():
                 errors.append(f"no page built for _{coll}/{source.name}")
                 continue
+            for problem in tech_errors(source):
+                errors.append(f"_{coll}/{source.name}: {problem}")
+            # Jekyll only warns on a YAML error and builds the page with no front matter at all
+            if '<h1 class="study-title"></h1>' in page.read_text(encoding="utf-8"):
+                errors.append(f"{url}: empty title (front matter missing or not valid YAML?)")
             want = question_count(source)
             got = page.read_text(encoding="utf-8").count('<details class="qa"')
             if got != want:
