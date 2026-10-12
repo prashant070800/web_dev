@@ -4,7 +4,8 @@ Personal portfolio site, served at [hellops.in](https://hellops.in).
 
 The portfolio is plain static HTML/CSS (`index.html`, `style.css`, `script.js`, `images/`).
 The study hub at [hellops.in/study](https://hellops.in/study/) is built by GitHub Pages' Jekyll
-from Markdown in `_projects/`, `_experience/`, and `_tech/`.
+from Markdown in `_projects/`, `_experience/`, and `_tech/`. The hub is unlisted: not linked from the
+portfolio, not in the sitemap, and marked `noindex`.
 
 ## Updating the resume
 

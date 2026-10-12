@@ -24,7 +24,7 @@ MUST_BE_PRESENT = [
     "sitemap.xml", "images/prashant.jpg", "study/index.html", "study.css",
 ]
 
-# Hub and sitemap must list every study page (switched on once the hub exists)
+# Hub must link every study page (switched on once the hub exists)
 CHECK_HUB = True
 
 # (page under _site, href that must appear on it)
@@ -36,8 +36,6 @@ REQUIRED_LINKS = [
     ("study/tech/django-channels/index.html", "/study/projects/qwr-voice-bot/"),
     ("study/tech/django-channels/index.html", "/study/experience/qwr/"),
     ("study/tech/django-channels/index.html", "/study/"),
-    # portfolio nav links to the hub
-    ("index.html", "study/"),
     ("study/tech/django/index.html", "/study/experience/jaxl/"),
     ("study/tech/django/index.html", "/study/experience/jaxl-intern/"),
     ("study/tech/gemini-live-api/index.html", "/study/projects/qwr-voice-bot/"),
@@ -47,6 +45,8 @@ REQUIRED_LINKS = [
 FORBIDDEN_LINKS = [
     # exotel has no tech page: it must render as plain text, not a dead link
     ("study/projects/qwr-voice-bot/index.html", "/study/tech/exotel/"),
+    # the hub is unlisted: only reachable by typing the URL
+    ("index.html", "study/"),
 ]
 # (page under _site, text that must appear in its HTML)
 REQUIRED_TEXT = [
@@ -160,17 +160,22 @@ def main():
             got = page.read_text(encoding="utf-8").count('<details class="qa"')
             if got != want:
                 errors.append(f"{url}: {got} questions rendered, front matter has {want}")
-            if CHECK_HUB:
-                if url not in hub_refs:
-                    errors.append(f"hub does not link to {url}")
-                if f"<loc>https://hellops.in{url}</loc>" not in sitemap:
-                    errors.append(f"sitemap does not list {url}")
+            # the hub is unlisted: keep it out of search engines
+            if '<meta name="robots" content="noindex">' not in page.read_text(encoding="utf-8"):
+                errors.append(f"{url}: missing noindex")
+            if CHECK_HUB and url not in hub_refs:
+                errors.append(f"hub does not link to {url}")
 
     for page in sorted(SITE.rglob("*.html")):
         for ref in refs(page):
             target = resolve(page, ref)
             if target is not None and not target.exists():
                 errors.append(f"{page.relative_to(SITE).as_posix()}: broken link {ref}")
+
+    if "/study" in sitemap:
+        errors.append("sitemap.xml lists study pages (the hub is unlisted)")
+    if '<meta name="robots" content="noindex">' not in (html("study/index.html") or ""):
+        errors.append("study/index.html: missing noindex")
 
     try:
         ET.parse(SITE / "sitemap.xml")

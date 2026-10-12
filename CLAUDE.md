@@ -38,7 +38,7 @@ Personal portfolio for Prashant Singh, served at https://hellops.in via GitHub P
 - `_layouts/study.html` duplicates the portfolio `<head>` assets, header, nav, and footer. Change both when either changes.
 - Never give a `<section>` an `id` on study pages: `script.js` scroll-spies `main section[id]` and would clear the Study nav link's active state.
 - `_config.yml` `exclude` keeps repo-only files (`CLAUDE.md`, `README.md`, `docs/`, `tools/`, `resume.tex`, …) off the live site. Add new repo-only files there.
-- `sitemap.xml` is a Liquid template that lists every study page automatically.
+- The hub is deliberately unlisted: nothing on the portfolio links to `/study/`, study pages are left out of `sitemap.xml`, and `_layouts/study.html` sets `noindex`. `check_site.py` enforces all three. It is still public to anyone with the URL (and the repo is public).
 - `tools/build-site.ps1` sets `PAGES_REPO_NWO` because `jekyll-github-metadata` can't read the repo name from the `github-personal` SSH remote.
 
 ## SEO metadata kept in sync
