@@ -38,6 +38,10 @@ REQUIRED_LINKS = [
     ("study/tech/django-channels/index.html", "/study/"),
     # portfolio nav links to the hub
     ("index.html", "study/"),
+    ("study/tech/django/index.html", "/study/experience/jaxl/"),
+    ("study/tech/django/index.html", "/study/experience/jaxl-intern/"),
+    ("study/tech/gemini-live-api/index.html", "/study/projects/qwr-voice-bot/"),
+    ("study/projects/qwr-voice-bot/index.html", "/study/tech/gemini-live-api/"),
 ]
 # (page under _site, href that must not appear on it)
 FORBIDDEN_LINKS = [
@@ -51,9 +55,14 @@ REQUIRED_TEXT = [
     # mobile menu markup that script.js depends on
     ("study/tech/django-channels/index.html", 'class="nav-toggle"'),
     ("study/tech/django-channels/index.html", "<title>Django Channels · Study | Prashant Singh</title>"),
+    # redis is on the skills list but no page is tagged with it yet
+    ("study/tech/redis/index.html", "Nothing is tagged with this yet."),
 ]
 # (page under _site, text that must not appear in its HTML)
-FORBIDDEN_TEXT = []
+FORBIDDEN_TEXT = [
+    # vargi-bot was a competition project, not built during a role
+    ("study/projects/vargi-bot/index.html", "Built during"),
+]
 
 EXTERNAL = re.compile(r"^(?:[a-z][a-z0-9+.-]*:|//|#)", re.I)
 
