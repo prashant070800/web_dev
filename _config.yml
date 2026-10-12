@@ -1,0 +1,46 @@
+# Jekyll config for GitHub Pages. The portfolio (index.html) has no front matter and is copied as-is;
+# the study hub at /study/ is built from the three collections below.
+title: Prashant Singh
+url: https://hellops.in
+repository: prashant070800/web_dev
+
+collections:
+  projects:
+    output: true
+    permalink: /study/projects/:name/
+  experience:
+    output: true
+    permalink: /study/experience/:name/
+  tech:
+    output: true
+    permalink: /study/tech/:name/
+
+defaults:
+  - scope: { path: "", type: projects }
+    values: { layout: study-item }
+  - scope: { path: "", type: experience }
+    values: { layout: study-item }
+  - scope: { path: "", type: tech }
+    values: { layout: study-item }
+
+# Tech page groups on the hub, in the portfolio's Skills order. A tech page whose
+# category is missing or not listed here appears under "Other".
+study_categories:
+  - { key: languages, label: Languages }
+  - { key: frameworks, label: Frameworks }
+  - { key: databases, label: Databases }
+  - { key: ai, label: "AI & LLMs" }
+  - { key: realtime, label: "Telecom & Realtime" }
+  - { key: cloud, label: "Cloud & Other" }
+
+# Repo-only files that must not be published
+exclude:
+  - CLAUDE.md
+  - README.md
+  - resume.tex
+  - build-resume.ps1
+  - docs
+  - tools
+  - Gemfile
+  - Gemfile.lock
+  - vendor

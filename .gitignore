@@ -6,3 +6,9 @@
 *.synctex.gz
 *.fdb_latexmk
 *.fls
+
+# Jekyll build output
+_site/
+.jekyll-cache/
+.sass-cache/
+Gemfile.lock
