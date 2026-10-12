@@ -25,7 +25,7 @@ MUST_BE_PRESENT = [
 ]
 
 # Hub and sitemap must list every study page (switched on once the hub exists)
-CHECK_HUB = False
+CHECK_HUB = True
 
 # (page under _site, href that must appear on it)
 REQUIRED_LINKS = [
@@ -36,6 +36,8 @@ REQUIRED_LINKS = [
     ("study/tech/django-channels/index.html", "/study/projects/qwr-voice-bot/"),
     ("study/tech/django-channels/index.html", "/study/experience/qwr/"),
     ("study/tech/django-channels/index.html", "/study/"),
+    # portfolio nav links to the hub
+    ("index.html", "study/"),
 ]
 # (page under _site, href that must not appear on it)
 FORBIDDEN_LINKS = [

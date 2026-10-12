@@ -1,3 +1,5 @@
+---
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -8,4 +10,12 @@
     <loc>https://hellops.in/resume.pdf</loc>
     <lastmod>2026-10-05</lastmod>
   </url>
+  <url>
+    <loc>{{ '/study/' | absolute_url }}</loc>
+  </url>
+{%- for doc in site.documents %}
+  <url>
+    <loc>{{ doc.url | absolute_url }}</loc>
+  </url>
+{%- endfor %}
 </urlset>
