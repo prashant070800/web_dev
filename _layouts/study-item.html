@@ -1,0 +1,45 @@
+---
+layout: study
+---
+<article class="study study-item">
+    <div class="container">
+        <p class="crumbs"><a href="{{ '/study/' | relative_url }}">study</a> / {{ page.collection }}</p>
+        <h1 class="study-title">{{ page.title }}</h1>
+        {%- if page.collection == "experience" %}
+        <p class="study-meta">{{ page.role }} @ {{ page.company }} · {{ page.period }}</p>
+        {%- endif %}
+        {%- if page.summary %}
+        <p class="study-summary">{{ page.summary }}</p>
+        {%- endif %}
+        {%- if page.links.repo or page.links.demo %}
+        <p class="study-links">
+            {%- if page.links.repo %}
+            <a class="btn btn-ghost btn-sm" href="{{ page.links.repo }}" target="_blank" rel="noopener"><i
+                    class="fab fa-github"></i> Code</a>
+            {%- endif %}
+            {%- if page.links.demo %}
+            <a class="btn btn-ghost btn-sm" href="{{ page.links.demo }}" target="_blank" rel="noopener"><i
+                    class="fas fa-play"></i> Demo</a>
+            {%- endif %}
+        </p>
+        {%- endif %}
+
+        <div class="prose">
+{{ content }}
+        </div>
+
+        {%- if page.questions.size > 0 %}
+        <section class="qa-list">
+            <h2>Interview questions</h2>
+            {%- for item in page.questions %}
+            <details class="qa">
+                <summary>{{ item.q | markdownify | remove: "<p>" | remove: "</p>" | strip }}</summary>
+                <div class="qa-answer">{{ item.a | markdownify }}</div>
+            </details>
+            {%- endfor %}
+        </section>
+        {%- endif %}
+
+        {% include related.html %}
+    </div>
+</article>

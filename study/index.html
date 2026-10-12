@@ -1,0 +1,44 @@
+---
+layout: study
+title: Study
+summary: Interview prep notes on my projects, roles and tech stack, with questions to practise on.
+---
+<section class="section study">
+    <div class="container">
+        <p class="crumbs"><a href="{{ '/' | relative_url }}">~/prashant</a> / study</p>
+        <h1 class="study-title">Study notes</h1>
+        <p class="study-summary">How each project works, what I did in each role, and the tech behind it all.
+            Every page ends with interview questions: click one to reveal the answer.</p>
+
+        <div class="study-group">
+            <h2 class="section-title"><span class="num">01.</span> Projects</h2>
+            {%- assign docs = site.projects | sort: "order" %}
+            <ul class="doc-grid">{% for d in docs %}{% include doc-card.html doc=d %}{% endfor %}</ul>
+        </div>
+
+        <div class="study-group">
+            <h2 class="section-title"><span class="num">02.</span> Experience</h2>
+            {%- assign docs = site.experience | sort: "order" %}
+            <ul class="doc-grid">{% for d in docs %}{% include doc-card.html doc=d %}{% endfor %}</ul>
+        </div>
+
+        <div class="study-group">
+            <h2 class="section-title"><span class="num">03.</span> Tech stack</h2>
+            {%- for cat in site.study_categories %}
+            {%- assign docs = site.tech | where: "category", cat.key | sort: "title" %}
+            {%- if docs.size > 0 %}
+            <h3 class="study-subhead">{{ cat.label }}</h3>
+            <ul class="doc-grid">{% for d in docs %}{% include doc-card.html doc=d %}{% endfor %}</ul>
+            {%- endif %}
+            {%- endfor %}
+
+            {%- assign cat_keys = site.study_categories | map: "key" %}
+            {%- assign other_count = 0 %}
+            {%- for d in site.tech %}{% unless cat_keys contains d.category %}{% assign other_count = other_count | plus: 1 %}{% endunless %}{% endfor %}
+            {%- if other_count > 0 %}
+            <h3 class="study-subhead">Other</h3>
+            <ul class="doc-grid">{% for d in site.tech %}{% unless cat_keys contains d.category %}{% include doc-card.html doc=d %}{% endunless %}{% endfor %}</ul>
+            {%- endif %}
+        </div>
+    </div>
+</section>

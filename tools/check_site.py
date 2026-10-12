@@ -21,18 +21,35 @@ MUST_BE_ABSENT = [
 ]
 MUST_BE_PRESENT = [
     "index.html", "style.css", "script.js", "resume.pdf", "CNAME", "robots.txt",
-    "sitemap.xml", "images/prashant.jpg",
+    "sitemap.xml", "images/prashant.jpg", "study/index.html", "study.css",
 ]
 
 # Hub and sitemap must list every study page (switched on once the hub exists)
 CHECK_HUB = False
 
 # (page under _site, href that must appear on it)
-REQUIRED_LINKS = []
+REQUIRED_LINKS = [
+    ("study/projects/qwr-voice-bot/index.html", "/study/tech/django-channels/"),
+    ("study/projects/qwr-voice-bot/index.html", "/study/experience/qwr/"),
+    ("study/experience/qwr/index.html", "/study/projects/qwr-voice-bot/"),
+    ("study/experience/qwr/index.html", "/study/tech/django-channels/"),
+    ("study/tech/django-channels/index.html", "/study/projects/qwr-voice-bot/"),
+    ("study/tech/django-channels/index.html", "/study/experience/qwr/"),
+    ("study/tech/django-channels/index.html", "/study/"),
+]
 # (page under _site, href that must not appear on it)
-FORBIDDEN_LINKS = []
+FORBIDDEN_LINKS = [
+    # exotel has no tech page: it must render as plain text, not a dead link
+    ("study/projects/qwr-voice-bot/index.html", "/study/tech/exotel/"),
+]
 # (page under _site, text that must appear in its HTML)
-REQUIRED_TEXT = []
+REQUIRED_TEXT = [
+    ("study/projects/qwr-voice-bot/index.html", '<li class="tag-missing">exotel</li>'),
+    ("study/projects/qwr-voice-bot/index.html", "Built during"),
+    # mobile menu markup that script.js depends on
+    ("study/tech/django-channels/index.html", 'class="nav-toggle"'),
+    ("study/tech/django-channels/index.html", "<title>Django Channels · Study | Prashant Singh</title>"),
+]
 # (page under _site, text that must not appear in its HTML)
 FORBIDDEN_TEXT = []
 

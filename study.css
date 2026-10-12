@@ -1,0 +1,239 @@
+/* Study hub (/study/). Builds on the tokens and components in style.css. */
+
+.study {
+    padding: 56px 0 88px;
+}
+
+.study-item .container {
+    max-width: 780px;
+}
+
+.crumbs {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+.crumbs a {
+    color: var(--accent);
+}
+
+.study-title {
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+
+.study-meta {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-top: 0.6rem;
+}
+
+.study-summary {
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin-top: 0.75rem;
+    max-width: 640px;
+}
+
+.study-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+/* ---------- Hub ---------- */
+.study-group {
+    margin-top: 64px;
+}
+
+.study-subhead,
+.related h3 {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--muted);
+    margin: 1.75rem 0 0.75rem;
+}
+
+.doc-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+}
+
+.doc-card a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    height: 100%;
+    padding: 18px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.doc-card a:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.doc-card-title {
+    font-weight: 600;
+}
+
+.doc-card-meta {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+}
+
+.doc-card-summary {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.doc-card-count {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--string);
+}
+
+/* ---------- Page body (Markdown) ---------- */
+.prose {
+    margin-top: 40px;
+}
+
+.prose h2 {
+    font-size: 1.35rem;
+    letter-spacing: -0.01em;
+    margin: 2.2rem 0 0.8rem;
+}
+
+.prose h3 {
+    font-size: 1.1rem;
+    margin: 1.6rem 0 0.6rem;
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose pre {
+    margin-bottom: 1rem;
+}
+
+.prose ul,
+.prose ol {
+    padding-left: 1.4rem;
+}
+
+.prose ul {
+    list-style: disc;
+}
+
+.prose ol {
+    list-style: decimal;
+}
+
+.prose li {
+    margin-bottom: 0.35rem;
+}
+
+.prose pre {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+}
+
+.prose pre code {
+    background: none;
+    padding: 0;
+}
+
+.prose a,
+.qa-answer a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ---------- Interview questions ---------- */
+.qa-list,
+.related {
+    margin-top: 56px;
+}
+
+.qa-list h2,
+.related h2 {
+    font-size: 1.35rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+}
+
+.qa {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+}
+
+.qa summary {
+    display: flex;
+    gap: 0.6rem;
+    padding: 14px 18px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+}
+
+.qa summary::-webkit-details-marker {
+    display: none;
+}
+
+.qa summary::before {
+    content: "Q";
+    font-family: var(--font-mono);
+    color: var(--accent);
+}
+
+.qa[open] summary {
+    border-bottom: 1px solid var(--border);
+}
+
+.qa-answer {
+    padding: 14px 18px;
+    color: var(--muted);
+}
+
+.qa-answer p + p {
+    margin-top: 0.75rem;
+}
+
+/* ---------- Related ---------- */
+.chips a {
+    color: inherit;
+}
+
+.chips .tag-missing {
+    color: var(--muted);
+    background: transparent;
+    border-style: dashed;
+    border-color: var(--border);
+}
+
+.related-empty {
+    color: var(--muted);
+}

@@ -1,0 +1,18 @@
+{%- comment -%}
+  One study document as a card. Usage: {% include doc-card.html doc=d %}
+{%- endcomment -%}
+{%- assign dc_q = include.doc.questions | size -%}
+<li class="doc-card">
+    <a href="{{ include.doc.url | relative_url }}">
+        <span class="doc-card-title">{{ include.doc.title }}</span>
+        {%- if include.doc.period %}
+        <span class="doc-card-meta">{{ include.doc.period }}</span>
+        {%- endif %}
+        {%- if include.doc.summary %}
+        <span class="doc-card-summary">{{ include.doc.summary }}</span>
+        {%- endif %}
+        {%- if dc_q > 0 %}
+        <span class="doc-card-count">{{ dc_q }} question{% if dc_q != 1 %}s{% endif %}</span>
+        {%- endif %}
+    </a>
+</li>

@@ -1,0 +1,12 @@
+{%- comment -%}
+  One tag as a chip. Links to the page if /study/<collection>/<slug>/ exists,
+  otherwise renders the slug as plain text so a tag never produces a dead link.
+  Usage: {% include tag-link.html collection="tech" slug="django" %}
+{%- endcomment -%}
+{%- assign tl_url = "/study/" | append: include.collection | append: "/" | append: include.slug | append: "/" -%}
+{%- assign tl_doc = site[include.collection] | where: "url", tl_url | first -%}
+{%- if tl_doc -%}
+<li><a class="tag-link" href="{{ tl_doc.url | relative_url }}">{{ tl_doc.title }}</a></li>
+{%- else -%}
+<li class="tag-missing">{{ include.slug }}</li>
+{%- endif -%}

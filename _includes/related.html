@@ -1,0 +1,39 @@
+{%- comment -%}
+  Cross-links for the current study page, derived from front matter only:
+  projects -> their tech + role; experience -> their tech + projects; tech -> what uses it.
+{%- endcomment -%}
+{%- assign r_slug = page.url | split: "/" | last -%}
+<section class="related">
+    <h2>Related</h2>
+    {%- if page.collection == "tech" %}
+    {%- assign r_projects = site.projects | where_exp: "d", "d.tech contains r_slug" | sort: "order" %}
+    {%- assign r_roles = site.experience | where_exp: "d", "d.tech contains r_slug" | sort: "order" %}
+    {%- if r_projects.size == 0 and r_roles.size == 0 %}
+    <p class="related-empty">Nothing is tagged with this yet.</p>
+    {%- endif %}
+    {%- if r_projects.size > 0 %}
+    <h3>Used in projects</h3>
+    <ul class="doc-grid">{% for d in r_projects %}{% include doc-card.html doc=d %}{% endfor %}</ul>
+    {%- endif %}
+    {%- if r_roles.size > 0 %}
+    <h3>Used in roles</h3>
+    <ul class="doc-grid">{% for d in r_roles %}{% include doc-card.html doc=d %}{% endfor %}</ul>
+    {%- endif %}
+    {%- else %}
+    {%- if page.tech.size > 0 %}
+    <h3>Tech stack</h3>
+    <ul class="chips">{% for t in page.tech %}{% include tag-link.html collection="tech" slug=t %}{% endfor %}</ul>
+    {%- endif %}
+    {%- if page.collection == "projects" and page.experience %}
+    <h3>Built during</h3>
+    <ul class="chips">{% include tag-link.html collection="experience" slug=page.experience %}</ul>
+    {%- endif %}
+    {%- if page.collection == "experience" %}
+    {%- assign r_projects = site.projects | where: "experience", r_slug | sort: "order" %}
+    {%- if r_projects.size > 0 %}
+    <h3>Projects</h3>
+    <ul class="doc-grid">{% for d in r_projects %}{% include doc-card.html doc=d %}{% endfor %}</ul>
+    {%- endif %}
+    {%- endif %}
+    {%- endif %}
+</section>
