@@ -40,6 +40,7 @@ category: frameworks        # tech only: languages, frameworks, databases, ai, r
 order: 2                    # projects/experience only: position on the hub (lower first)
 tech: [django, postgresql]  # projects/experience: tech slugs; links appear automatically
 experience: jaxl            # projects only: the role it was built in
+experience_label: Built during  # projects only, optional: heading for that role link
 company: JAXL               # experience only, with role: and period:
 questions:
   - q: "Quote every question"

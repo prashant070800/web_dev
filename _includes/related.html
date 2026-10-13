@@ -25,7 +25,7 @@
     <ul class="chips">{% for t in page.tech %}{% include tag-link.html collection="tech" slug=t %}{% endfor %}</ul>
     {%- endif %}
     {%- if page.collection == "projects" and page.experience %}
-    <h3>Built during</h3>
+    <h3>{{ page.experience_label | default: "Built during" }}</h3>
     <ul class="chips">{% include tag-link.html collection="experience" slug=page.experience %}</ul>
     {%- endif %}
     {%- if page.collection == "experience" %}

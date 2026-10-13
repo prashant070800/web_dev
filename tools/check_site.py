@@ -51,7 +51,9 @@ FORBIDDEN_LINKS = [
 # (page under _site, text that must appear in its HTML)
 REQUIRED_TEXT = [
     ("study/projects/qwr-voice-bot/index.html", '<li class="tag-missing">exotel</li>'),
-    ("study/projects/qwr-voice-bot/index.html", "Built during"),
+    # built as QWR's hiring assignment, before joining: experience_label overrides "Built during"
+    ("study/projects/qwr-voice-bot/index.html", "<h3>Hiring assignment for</h3>"),
+    ("study/projects/qwr-voice-bot/index.html", "Proof of concept built as the hiring assignment for QWR"),
     # mobile menu markup that script.js depends on
     ("study/tech/django-channels/index.html", 'class="nav-toggle"'),
     ("study/tech/django-channels/index.html", "<title>Django Channels · Study | Prashant Singh</title>"),
@@ -62,6 +64,8 @@ REQUIRED_TEXT = [
 FORBIDDEN_TEXT = [
     # vargi-bot was a competition project, not built during a role
     ("study/projects/vargi-bot/index.html", "Built during"),
+    ("study/projects/qwr-voice-bot/index.html", "Built during"),
+    ("study/projects/qwr-voice-bot/index.html", "Production"),
     # the hub is unlisted: no Study link in any nav bar
     ("study/index.html", 'class="nav-link active"'),
     ("study/tech/django/index.html", 'class="nav-link active"'),
